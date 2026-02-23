@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mugisha John Wycliffe - Developer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #0a0a0f;
+      --color-surface: #16161f;
+      --color-text: #e8e8ed;
+      --color-primary: #6366f1;
+      --color-secondary: #22d3ee;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass-card {
+      background: rgba(22, 22, 31, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(99, 102, 241, 0.1);
+    }
+    
+    .skill-tag {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(34, 211, 238, 0.1) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+    
+    .glow-effect {
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full" style="background-color: var(--color-bg); color: var(--color-text); font-family: 'Inter', sans-serif;">
+  <div id="main-wrapper" class="h-full w-full overflow-auto"><!-- Decorative Background Elements -->
+   <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl" style="background: var(--color-primary);"></div>
+    <div class="absolute bottom-40 right-20 w-96 h-96 rounded-full opacity-10 blur-3xl" style="background: var(--color-secondary);"></div>
+   </div><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 glass-card">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"><span class="text-xl font-bold" style="font-family: 'Space Grotesk', sans-serif;"> <span class="gradient-text">JW</span> </span>
+     <div class="hidden md:flex items-center gap-8 text-sm"><a href="#about" class="hover:text-indigo-400 transition-colors">About</a> <a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a> <a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a> <a href="#contact" class="px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="background: var(--color-primary);">Contact</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <section class="relative min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="max-w-4xl mx-auto text-center">
+     <div class="animate-in opacity-0">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mb-6 skill-tag"><span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--color-secondary);"></span> <span>Open to opportunities</span>
+      </div>
+     </div>
+     <h1 id="hero-headline" class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-in opacity-0 delay-1" style="font-family: 'Space Grotesk', sans-serif;">Building the Future,<br><span class="gradient-text">One Line at a Time</span></h1>
+     <p id="hero-tagline" class="text-xl md:text-2xl mb-4 animate-in opacity-0 delay-2" style="color: var(--color-secondary);">Student Developer • Problem Solver • Lifelong Learner</p>
+     <p class="text-lg max-w-2xl mx-auto mb-10 animate-in opacity-0 delay-3" style="color: rgba(232, 232, 237, 0.7);">I'm <strong style="color: var(--color-text);">Mugisha John Wycliffe</strong>, a passionate developer from Mbarara, Uganda, crafting web experiences that matter. I turn complex problems into elegant solutions using Laravel, Next.js, and a growing fascination with AI.</p>
+     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in opacity-0 delay-4"><a href="#projects" class="px-8 py-3 rounded-full font-medium transition-all hover:scale-105 glow-effect" style="background: var(--color-primary);"> View My Work </a> <a href="#contact" class="px-8 py-3 rounded-full font-medium transition-all hover:scale-105" style="border: 1px solid var(--color-primary); color: var(--color-primary);"> Let's Talk </a>
+     </div><!-- Scroll Indicator -->
+     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 float-animation">
+      <svg class="w-6 h-6 opacity-50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid md:grid-cols-2 gap-12 items-center"><!-- Visual Element -->
+      <div class="relative">
+       <div class="glass-card rounded-3xl p-8 glow-effect">
+        <div class="aspect-square rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(34, 211, 238, 0.1) 100%);">
+         <div class="text-center">
+          <img src="john.jpg" alt="Profile Picture" class="w-full h-full object-cover rounded-2xl">
+          <div class="flex items-center justify-center gap-2 text-sm" style="color: rgba(232, 232, 237, 0.6);">
+           <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+           </svg> Mbarara, Uganda
+          </div>
+         </div>
+        </div>
+       </div><!-- Floating badges -->
+       <div class="absolute -top-4 -right-4 px-4 py-2 rounded-full text-sm float-animation" style="background: var(--color-primary);">
+        Laravel
+       </div>
+       <div class="absolute -bottom-4 -left-4 px-4 py-2 rounded-full text-sm float-animation" style="background: var(--color-secondary); color: var(--color-bg); animation-delay: 1s;">
+        Next.js
+       </div>
+      </div><!-- Content -->
+      <div>
+       <h2 id="about-title" class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Space Grotesk', sans-serif;">About <span class="gradient-text">Me</span></h2>
+       <div class="space-y-4" style="color: rgba(232, 232, 237, 0.8);">
+        <p><strong style="color: var(--color-text);">My journey into tech</strong> started with curiosity—wondering how websites worked, then discovering I could actually build them myself. What began as simple HTML experiments has evolved into a genuine passion for creating software that solves real problems.</p>
+        <p><strong style="color: var(--color-text);">What drives me</strong> is the intersection of technology and impact. Growing up in Uganda, I've seen firsthand how the right digital solution can transform businesses and communities. That's why I don't just code—I think about the people who'll use what I build.</p>
+        <p><strong style="color: var(--color-text);">My philosophy</strong> is simple: write code that your future self will thank you for. Clean architecture, thoughtful documentation, and systems that scale. I believe in understanding the "why" before the "how," and in continuous learning as a non-negotiable part of being a developer.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Skills Section -->
+   <section id="skills" class="py-24 px-6" style="background: linear-gradient(180deg, transparent 0%, rgba(22, 22, 31, 0.5) 50%, transparent 100%);">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+      <p style="color: rgba(232, 232, 237, 0.6);">The tools I use to bring ideas to life</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Frontend -->
+      <div class="glass-card rounded-2xl p-6 hover:scale-105 transition-transform">
+       <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+       </div>
+       <h3 class="font-semibold mb-3" style="font-family: 'Space Grotesk', sans-serif;">Frontend</h3>
+       <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">Next.js</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">React</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">Tailwind CSS</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">HTML/CSS</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">JavaScript</span>
+       </div>
+      </div><!-- Backend -->
+      <div class="glass-card rounded-2xl p-6 hover:scale-105 transition-transform">
+       <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+        </svg>
+       </div>
+       <h3 class="font-semibold mb-3" style="font-family: 'Space Grotesk', sans-serif;">Backend</h3>
+       <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">Laravel</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">PHP</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">MySQL</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">REST APIs</span>
+       </div>
+      </div><!-- Tools & Infrastructure -->
+      <div class="glass-card rounded-2xl p-6 hover:scale-105 transition-transform">
+       <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--color-primary), #a855f7);">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+       </div>
+       <h3 class="font-semibold mb-3" style="font-family: 'Space Grotesk', sans-serif;">Tools</h3>
+       <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">Git/GitHub</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">VS Code</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">SEO</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">Troubleshooting</span>
+       </div>
+      </div><!-- Networking & Other -->
+      <div class="glass-card rounded-2xl p-6 hover:scale-105 transition-transform">
+       <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background: linear-gradient(135deg, #a855f7, var(--color-secondary));">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+        </svg>
+       </div>
+       <h3 class="font-semibold mb-3" style="font-family: 'Space Grotesk', sans-serif;">Networking</h3>
+       <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">LAN Setup</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">Network Config</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">AI Tools</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Projects Section -->
+   <section id="projects" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">Featured <span class="gradient-text">Projects</span></h2>
+      <p style="color: rgba(232, 232, 237, 0.6);">Real solutions I've built for real challenges</p>
+     </div>
+     <div class="space-y-8"><!-- Project 1 -->
+      <div class="glass-card rounded-3xl p-8 hover:scale-[1.02] transition-transform glow-effect">
+       <div class="grid md:grid-cols-3 gap-8">
+        <div class="md:col-span-2">
+         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(34, 211, 238, 0.2); color: var(--color-secondary);">Live</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Organization Website</span>
+         </div>
+         <h3 class="text-2xl font-bold mb-3" style="font-family: 'Space Grotesk', sans-serif;">EnvHub Uganda</h3>
+         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">The Challenge:</strong> An environmental organization needed an online presence to showcase their initiatives and reach a broader audience.</p>
+         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">My Solution:</strong> Designed and developed a clean, professional static website that effectively communicates the organization's mission, programs, and impact.</p>
+         <p class="mb-6" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">Impact:</strong> Increased organizational visibility and provided a central hub for stakeholders to learn about environmental initiatives in Uganda.</p>
+         <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">HTML</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">CSS</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">JavaScript</span>
+         </div>
+        </div>
+        <div class="flex items-center justify-center"><a href="https://envhub-ug.org" target="_blank" rel="noopener noreferrer" class="w-full h-48 rounded-2xl flex items-center justify-center group transition-all hover:scale-105" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(99, 102, 241, 0.2));">
+          <div class="text-center"><span class="text-4xl block mb-2">🌿</span> <span class="text-sm group-hover:underline" style="color: var(--color-secondary);">Visit Site →</span>
+          </div></a>
+        </div>
+       </div>
+      </div><!-- Project 2 -->
+      <div class="glass-card rounded-3xl p-8 hover:scale-[1.02] transition-transform glow-effect">
+       <div class="grid md:grid-cols-3 gap-8">
+        <div class="md:col-span-2">
+         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(99, 102, 241, 0.2); color: var(--color-primary);">Completed</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Business System</span>
+         </div>
+         <h3 class="text-2xl font-bold mb-3" style="font-family: 'Space Grotesk', sans-serif;">Property Management System</h3>
+         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">The Challenge:</strong> Property owners struggled with manual tracking of tenants, payments, and maintenance requests—leading to missed payments and inefficient communication.</p>
+         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">My Solution:</strong> Built a comprehensive management system with tenant databases, automated payment tracking, maintenance request workflows, and reporting dashboards.</p>
+         <p class="mb-6" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">Impact:</strong> Streamlined operations, reduced payment delays, and provided property owners with real-time insights into their portfolios.</p>
+         <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">Laravel</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">PHP</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">MySQL</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">Blade Templates</span>
+         </div>
+        </div>
+        <div class="flex items-center justify-center">
+         <div class="w-full h-48 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));">
+          <div class="text-center"><span class="text-4xl block mb-2">🏢</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Private Project</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Project 3 -->
+      <div class="glass-card rounded-3xl p-8 hover:scale-[1.02] transition-transform glow-effect">
+       <div class="grid md:grid-cols-3 gap-8">
+        <div class="md:col-span-2">
+         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(34, 211, 238, 0.2); color: var(--color-secondary);">Completed</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Modern Web App</span>
+         </div>
+         <h3 class="text-2xl font-bold mb-3" style="font-family: 'Space Grotesk', sans-serif;">Next.js Web Application</h3>
+         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">The Challenge:</strong> Needed to deliver a fast, SEO-friendly, and visually polished web experience with modern development practices.</p>
+         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">My Solution:</strong> Leveraged Next.js for server-side rendering and Tailwind CSS for rapid, responsive styling—creating a performant application with excellent developer experience.</p>
+         <p class="mb-6" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">Impact:</strong> Delivered a lightning-fast user experience with improved search engine visibility and maintainable codebase.</p>
+         <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">Next.js</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">React</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">Tailwind CSS</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">TypeScript</span>
+         </div>
+        </div>
+        <div class="flex items-center justify-center">
+         <div class="w-full h-48 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(99, 102, 241, 0.2));">
+          <div class="text-center"><span class="text-4xl block mb-2">⚡</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Portfolio Project</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Currently Working On -->
+   <section class="py-24 px-6" style="background: linear-gradient(180deg, transparent 0%, rgba(22, 22, 31, 0.5) 50%, transparent 100%);">
+    <div class="max-w-4xl mx-auto">
+     <div class="glass-card rounded-3xl p-8 md:p-12 text-center glow-effect">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm mb-6 skill-tag"><span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--color-primary);"></span> <span>Currently Building</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Space Grotesk', sans-serif;">What I'm <span class="gradient-text">Working On</span></h2>
+      <div class="space-y-6 text-left max-w-2xl mx-auto">
+       <div class="flex gap-4">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(99, 102, 241, 0.2);"><span>🎯</span>
+        </div>
+        <div>
+         <h3 class="font-semibold mb-1">Current Focus</h3>
+         <p style="color: rgba(232, 232, 237, 0.7);">Deepening my expertise in Laravel and Next.js while exploring how AI can enhance the applications I build. Building production-ready systems that prioritize security and scalability.</p>
+        </div>
+       </div>
+       <div class="flex gap-4">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(34, 211, 238, 0.2);"><span>📚</span>
+        </div>
+        <div>
+         <h3 class="font-semibold mb-1">Learning Journey</h3>
+         <p style="color: rgba(232, 232, 237, 0.7);">Diving into AI integration patterns, advanced Laravel architecture, and modern deployment strategies. Every day brings new discoveries in this ever-evolving field.</p>
+        </div>
+       </div>
+       <div class="flex gap-4">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(168, 85, 247, 0.2);"><span>🚀</span>
+        </div>
+        <div>
+         <h3 class="font-semibold mb-1">The Vision</h3>
+         <p style="color: rgba(232, 232, 237, 0.7);">Working towards becoming a senior software developer who builds highly scalable, secure systems. I want to create technology that makes a meaningful difference—especially here in Africa.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Thoughts Section -->
+   <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Space Grotesk', sans-serif;">Thoughts &amp; <span class="gradient-text">Interests</span></h2>
+     <p class="text-lg mb-8" style="color: rgba(232, 232, 237, 0.7);">Beyond code, I think deeply about <strong style="color: var(--color-secondary);">AI trends</strong> and their implications for how we work and live. I'm fascinated by <strong style="color: var(--color-secondary);">clean code practices</strong>—the kind of craftsmanship that separates good developers from great ones. And as someone building from Uganda, I'm passionate about <strong style="color: var(--color-secondary);">tech innovation in Africa</strong>—proving that world-class software can come from anywhere.</p>
+     <div class="flex flex-wrap justify-center gap-4"><span class="skill-tag px-4 py-2 rounded-full text-sm">🤖 AI &amp; Machine Learning</span> <span class="skill-tag px-4 py-2 rounded-full text-sm">✨ Clean Code</span> <span class="skill-tag px-4 py-2 rounded-full text-sm">🌍 African Tech</span> <span class="skill-tag px-4 py-2 rounded-full text-sm">🔐 Security</span> <span class="skill-tag px-4 py-2 rounded-full text-sm">📈 Scalability</span>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+     <div class="glass-card rounded-3xl p-8 md:p-12 text-center glow-effect" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(34, 211, 238, 0.05) 100%);">
+      <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">Let's Build <span class="gradient-text">Something Together</span></h2>
+      <p class="text-lg mb-8 max-w-xl mx-auto" style="color: rgba(232, 232, 237, 0.7);">Whether you have a project in mind, want to collaborate on something interesting, or just want to say hello—I'd love to hear from you. I'm always open to new opportunities and meaningful conversations.</p><a href="mailto:johnwyc256@gmail.com" id="cta-button" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 glow-effect" style="background: var(--color-primary);">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+       </svg><span id="cta-button-text">Get In Touch</span> </a>
+      <div class="flex items-center justify-center gap-6 mt-8"><a href="https://github.com/JOHNBSE" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110" style="background: rgba(255, 255, 255, 0.1);">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg></a> <a href="https://www.linkedin.com/in/mugisha-john-wycliffe-469021234/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110" style="background: rgba(255, 255, 255, 0.1);">
+        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg></a> <a href="mailto:johnwyc256@gmail.com" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110" style="background: rgba(255, 255, 255, 0.1);">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg></a>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-8 px-6 border-t" style="border-color: rgba(99, 102, 241, 0.1);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+     <p class="text-sm" style="color: rgba(232, 232, 237, 0.5);">© 2024 Mugisha John Wycliffe. Built with passion in Uganda 🇺🇬</p>
+     <p class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Crafted with Next.js, Laravel, and ☕</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      hero_headline: "Building the Future,<br><span class=\"gradient-text\">One Line at a Time</span>",
+      hero_tagline: "Student Developer • Problem Solver • Lifelong Learner",
+      about_title: "About <span class=\"gradient-text\">Me</span>",
+      cta_heading: "Let's Build <span class=\"gradient-text\">Something Together</span>",
+      cta_button_text: "Get In Touch",
+      background_color: "#0a0a0f",
+      surface_color: "#16161f",
+      text_color: "#e8e8ed",
+      primary_color: "#6366f1",
+      secondary_color: "#22d3ee",
+      font_family: "Inter",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      // Update text content
+      document.getElementById('hero-headline').innerHTML = config.hero_headline || defaultConfig.hero_headline;
+      document.getElementById('hero-tagline').textContent = config.hero_tagline || defaultConfig.hero_tagline;
+      document.getElementById('about-title').innerHTML = config.about_title || defaultConfig.about_title;
+      document.getElementById('cta-heading').innerHTML = config.cta_heading || defaultConfig.cta_heading;
+      document.getElementById('cta-button-text').textContent = config.cta_button_text || defaultConfig.cta_button_text;
+
+      // Update colors
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+
+      document.documentElement.style.setProperty('--color-bg', bgColor);
+      document.documentElement.style.setProperty('--color-surface', surfaceColor);
+      document.documentElement.style.setProperty('--color-text', textColor);
+      document.documentElement.style.setProperty('--color-primary', primaryColor);
+      document.documentElement.style.setProperty('--color-secondary', secondaryColor);
+
+      document.body.style.backgroundColor = bgColor;
+      document.body.style.color = textColor;
+
+      // Update fonts
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'Inter, sans-serif';
+      const headingFontStack = 'Space Grotesk, sans-serif';
+      
+      document.body.style.fontFamily = `${fontFamily}, ${baseFontStack}`;
+      
+      document.querySelectorAll('h1, h2, h3').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, ${headingFontStack}`;
+      });
+
+      // Update font size
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontSize = `${baseSize}px`;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              config.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              config.secondary_color = value;
+              window.elementSdk.setConfig({ secondary_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+        ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline],
+        ["about_title", config.about_title || defaultConfig.about_title],
+        ["cta_heading", config.cta_heading || defaultConfig.cta_heading],
+        ["cta_button_text", config.cta_button_text || defaultConfig.cta_button_text]
+      ]);
+    }
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d28f1f7f53c8a3f',t:'MTc3MTg3MzAwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
