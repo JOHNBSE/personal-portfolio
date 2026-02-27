@@ -11,9 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     :root {
+      /* dark theme defaults */
       --color-bg: #0a0a0f;
       --color-surface: #16161f;
       --color-text: #e8e8ed;
+      --color-primary: #6366f1;
+      --color-secondary: #22d3ee;
+    }
+
+    /* light theme overrides applied when the html element has class "light" */
+    :root.light {
+      --color-bg: #ffffff;
+      --color-surface: #f5f5f5;
+      --color-text: #0a0a0f;
       --color-primary: #6366f1;
       --color-secondary: #22d3ee;
     }
@@ -71,6 +81,55 @@
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ <!-- theme handling script placed early to avoid flash-of-unstyled theme -->
+ <script>
+   (function() {
+     const root = document.documentElement;
+     const toggle = () => {
+       const current = root.classList.contains('light') ? 'light' : 'dark';
+       setTheme(current === 'light' ? 'dark' : 'light');
+     };
+     const setTheme = (theme) => {
+       if (theme === 'light') {
+         root.classList.add('light');
+         root.classList.remove('dark');
+       } else {
+         root.classList.add('dark');
+         root.classList.remove('light');
+       }
+       localStorage.setItem('theme', theme);
+       // update toggle icons for all toggles
+       document.querySelectorAll('.theme-toggle').forEach(el => {
+         el.textContent = theme === 'light' ? '🌙' : '☀️';
+       });
+     };
+     // check for saved preference
+     const saved = localStorage.getItem('theme');
+     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+     if (saved) {
+       setTheme(saved);
+     } else {
+       setTheme(prefersDark ? 'dark' : 'light');
+     }
+     // listen for changes to system theme
+     if (window.matchMedia) {
+       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+         if (!localStorage.getItem('theme')) {
+           setTheme(e.matches ? 'dark' : 'light');
+         }
+       });
+     }
+     // attach toggle handler once DOM is ready
+     document.addEventListener('DOMContentLoaded', () => {
+       document.querySelectorAll('.theme-toggle').forEach(el => {
+         el.addEventListener('click', toggle);
+       });
+       // make sure icons reflect the current theme now that buttons exist
+       const current = root.classList.contains('light') ? 'light' : 'dark';
+       setTheme(current);
+     });
+   })();
+ </script>
  </head>
  <body class="h-full" style="background-color: var(--color-bg); color: var(--color-text); font-family: 'Inter', sans-serif;">
   <div id="main-wrapper" class="h-full w-full overflow-auto"><!-- Decorative Background Elements -->
@@ -80,8 +139,20 @@
    </div><!-- Navigation -->
    <nav class="fixed top-0 left-0 right-0 z-50 glass-card">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"><span class="text-xl font-bold" style="font-family: 'Space Grotesk', sans-serif;"> <span class="gradient-text">JW</span> </span>
-     <div class="hidden md:flex items-center gap-8 text-sm"><a href="#about" class="hover:text-indigo-400 transition-colors">About</a> <a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a> <a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a> <a href="#contact" class="px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="background: var(--color-primary);">Contact</a>
+     <div class="hidden md:flex items-center gap-8 text-sm">
+       <a href="#about" class="hover:text-indigo-400 transition-colors">About</a>
+       <a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a>
+       <a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a>
+       <!-- theme toggle button (visible on medium+ screens) -->
+       <button id="theme-toggle" class="theme-toggle p-2 rounded-full hover:bg-gray-700 transition-colors" aria-label="Toggle light/dark mode">
+         🌙
+       </button>
+       <a href="#contact" class="px-4 py-2 rounded-full text-sm font-medium transition-all hover:scale-105" style="background: var(--color-primary);">Contact</a>
      </div>
+    <!-- mobile-only toggle (hamburger hidden) -->
+    <button id="theme-toggle-mobile" class="theme-toggle md:hidden absolute top-4 right-4 p-2 rounded-full hover:bg-gray-700 transition-colors" aria-label="Toggle theme">
+      🌙
+    </button>
     </div>
    </nav><!-- Hero Section -->
    <section class="relative min-h-screen flex items-center justify-center px-6 pt-20">
@@ -108,7 +179,7 @@
        <div class="glass-card rounded-3xl p-8 glow-effect">
         <div class="aspect-square rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(34, 211, 238, 0.1) 100%);">
          <div class="text-center">
-          <img src="john.jpg" alt="Profile Picture" class="w-full h-full object-cover rounded-2xl">
+          <img src="John.jpeg" alt="Profile Picture" class="w-full h-full object-cover rounded-2xl">
           <div class="flex items-center justify-center gap-2 text-sm" style="color: rgba(232, 232, 237, 0.6);">
            <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
            </svg> Mbarara, Uganda
