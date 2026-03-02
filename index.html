@@ -18,6 +18,10 @@
       --color-text-secondary: rgba(232, 232, 237, 0.7);
       --color-text-tertiary: rgba(232, 232, 237, 0.6);
       --color-text-muted: rgba(232, 232, 237, 0.5);
+      --color-card-bg: rgba(22, 22, 31, 0.7);
+      --color-card-border: rgba(99, 102, 241, 0.1);
+      --color-tag-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(34, 211, 238, 0.1) 100%);
+      --color-tag-border: rgba(99, 102, 241, 0.2);
       --color-primary: #6366f1;
       --color-secondary: #22d3ee;
     }
@@ -30,6 +34,10 @@
       --color-text-secondary: rgba(10, 10, 15, 0.7);
       --color-text-tertiary: rgba(10, 10, 15, 0.6);
       --color-text-muted: rgba(10, 10, 15, 0.5);
+      --color-card-bg: rgba(99, 102, 241, 0.08);
+      --color-card-border: rgba(99, 102, 241, 0.3);
+      --color-tag-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(34, 211, 238, 0.15) 100%);
+      --color-tag-border: rgba(99, 102, 241, 0.4);
       --color-primary: #6366f1;
       --color-secondary: #22d3ee;
     }
@@ -42,14 +50,14 @@
     }
     
     .glass-card {
-      background: rgba(22, 22, 31, 0.7);
+      background: var(--color-card-bg);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(99, 102, 241, 0.1);
+      border: 1px solid var(--color-card-border);
     }
     
     .skill-tag {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(34, 211, 238, 0.1) 100%);
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      background: var(--color-tag-bg);
+      border: 1px solid var(--color-tag-border);
     }
     
     .glow-effect {
