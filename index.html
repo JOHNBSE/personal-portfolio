@@ -15,6 +15,9 @@
       --color-bg: #0a0a0f;
       --color-surface: #16161f;
       --color-text: #e8e8ed;
+      --color-text-secondary: rgba(232, 232, 237, 0.7);
+      --color-text-tertiary: rgba(232, 232, 237, 0.6);
+      --color-text-muted: rgba(232, 232, 237, 0.5);
       --color-primary: #6366f1;
       --color-secondary: #22d3ee;
     }
@@ -24,6 +27,9 @@
       --color-bg: #ffffff;
       --color-surface: #f5f5f5;
       --color-text: #0a0a0f;
+      --color-text-secondary: rgba(10, 10, 15, 0.7);
+      --color-text-tertiary: rgba(10, 10, 15, 0.6);
+      --color-text-muted: rgba(10, 10, 15, 0.5);
       --color-primary: #6366f1;
       --color-secondary: #22d3ee;
     }
@@ -163,7 +169,7 @@
      </div>
      <h1 id="hero-headline" class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-in opacity-0 delay-1" style="font-family: 'Space Grotesk', sans-serif;">Building the Future,<br><span class="gradient-text">One Line at a Time</span></h1>
      <p id="hero-tagline" class="text-xl md:text-2xl mb-4 animate-in opacity-0 delay-2" style="color: var(--color-secondary);">Student Developer • Problem Solver • Lifelong Learner</p>
-     <p class="text-lg max-w-2xl mx-auto mb-10 animate-in opacity-0 delay-3" style="color: rgba(232, 232, 237, 0.7);">I'm <strong style="color: var(--color-text);">Mugisha John Wycliffe</strong>, a passionate developer from Mbarara, Uganda, crafting web experiences that matter. I turn complex problems into elegant solutions using Laravel, Next.js, and a growing fascination with AI.</p>
+     <p class="text-lg max-w-2xl mx-auto mb-10 animate-in opacity-0 delay-3" style="color: var(--color-text-secondary);">I'm <strong style="color: var(--color-text);">Mugisha John Wycliffe</strong>, a passionate developer from Mbarara, Uganda, crafting web experiences that matter. I turn complex problems into elegant solutions using Laravel, Next.js, and a growing fascination with AI.</p>
      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in opacity-0 delay-4"><a href="#projects" class="px-8 py-3 rounded-full font-medium transition-all hover:scale-105 glow-effect" style="background: var(--color-primary);"> View My Work </a> <a href="#contact" class="px-8 py-3 rounded-full font-medium transition-all hover:scale-105" style="border: 1px solid var(--color-primary); color: var(--color-primary);"> Let's Talk </a>
      </div><!-- Scroll Indicator -->
      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 float-animation">
@@ -180,7 +186,7 @@
         <div class="aspect-square rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(34, 211, 238, 0.1) 100%);">
          <div class="text-center">
           <img src="John.jpeg" alt="Profile Picture" class="w-full h-full object-cover rounded-2xl">
-          <div class="flex items-center justify-center gap-2 text-sm" style="color: rgba(232, 232, 237, 0.6);">
+          <div class="flex items-center justify-center gap-2 text-sm" style="color: var(--color-text-tertiary);">
            <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
            </svg> Mbarara, Uganda
           </div>
@@ -196,7 +202,7 @@
       </div><!-- Content -->
       <div>
        <h2 id="about-title" class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Space Grotesk', sans-serif;">About <span class="gradient-text">Me</span></h2>
-       <div class="space-y-4" style="color: rgba(232, 232, 237, 0.8);">
+       <div class="space-y-4" style="color: var(--color-text-secondary);">
         <p><strong style="color: var(--color-text);">My journey into tech</strong> started with curiosity—wondering how websites worked, then discovering I could actually build them myself. What began as simple HTML experiments has evolved into a genuine passion for creating software that solves real problems.</p>
         <p><strong style="color: var(--color-text);">What drives me</strong> is the intersection of technology and impact. Growing up in Uganda, I've seen firsthand how the right digital solution can transform businesses and communities. That's why I don't just code—I think about the people who'll use what I build.</p>
         <p><strong style="color: var(--color-text);">My philosophy</strong> is simple: write code that your future self will thank you for. Clean architecture, thoughtful documentation, and systems that scale. I believe in understanding the "why" before the "how," and in continuous learning as a non-negotiable part of being a developer.</p>
@@ -209,7 +215,7 @@
     <div class="max-w-6xl mx-auto">
      <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">Skills &amp; <span class="gradient-text">Technologies</span></h2>
-      <p style="color: rgba(232, 232, 237, 0.6);">The tools I use to bring ideas to life</p>
+      <p style="color: var(--color-text-tertiary);">The tools I use to bring ideas to life</p>
      </div>
      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Frontend -->
       <div class="glass-card rounded-2xl p-6 hover:scale-105 transition-transform">
@@ -255,18 +261,18 @@
     <div class="max-w-6xl mx-auto">
      <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">Featured <span class="gradient-text">Projects</span></h2>
-      <p style="color: rgba(232, 232, 237, 0.6);">Real solutions I've built for real challenges</p>
+      <p style="color: var(--color-text-tertiary);">Real solutions I've built for real challenges</p>
      </div>
      <div class="space-y-8"><!-- Project 1 -->
       <div class="glass-card rounded-3xl p-8 hover:scale-[1.02] transition-transform glow-effect">
        <div class="grid md:grid-cols-3 gap-8">
         <div class="md:col-span-2">
-         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(34, 211, 238, 0.2); color: var(--color-secondary);">Live</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Organization Website</span>
+         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(34, 211, 238, 0.2); color: var(--color-secondary);">Live</span> <span class="text-sm" style="color: var(--color-text-muted);">Organization Website</span>
          </div>
          <h3 class="text-2xl font-bold mb-3" style="font-family: 'Space Grotesk', sans-serif;">EnvHub Uganda</h3>
-         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">The Challenge:</strong> An environmental organization needed an online presence to showcase their initiatives and reach a broader audience.</p>
-         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">My Solution:</strong> Designed and developed a clean, professional static website that effectively communicates the organization's mission, programs, and impact.</p>
-         <p class="mb-6" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">Impact:</strong> Increased organizational visibility and provided a central hub for stakeholders to learn about environmental initiatives in Uganda.</p>
+         <p class="mb-4" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">The Challenge:</strong> An environmental organization needed an online presence to showcase their initiatives and reach a broader audience.</p>
+         <p class="mb-4" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">My Solution:</strong> Designed and developed a clean, professional static website that effectively communicates the organization's mission, programs, and impact.</p>
+         <p class="mb-6" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">Impact:</strong> Increased organizational visibility and provided a central hub for stakeholders to learn about environmental initiatives in Uganda.</p>
          <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">HTML</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">CSS</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">JavaScript</span>
          </div>
         </div>
@@ -279,18 +285,18 @@
       <div class="glass-card rounded-3xl p-8 hover:scale-[1.02] transition-transform glow-effect">
        <div class="grid md:grid-cols-3 gap-8">
         <div class="md:col-span-2">
-         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(99, 102, 241, 0.2); color: var(--color-primary);">Completed</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Business System</span>
+         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(99, 102, 241, 0.2); color: var(--color-primary);">Completed</span> <span class="text-sm" style="color: var(--color-text-muted);">Business System</span>
          </div>
          <h3 class="text-2xl font-bold mb-3" style="font-family: 'Space Grotesk', sans-serif;">Property Management System</h3>
-         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">The Challenge:</strong> Property owners struggled with manual tracking of tenants, payments, and maintenance requests—leading to missed payments and inefficient communication.</p>
-         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">My Solution:</strong> Built a comprehensive management system with tenant databases, automated payment tracking, maintenance request workflows, and reporting dashboards.</p>
-         <p class="mb-6" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">Impact:</strong> Streamlined operations, reduced payment delays, and provided property owners with real-time insights into their portfolios.</p>
+         <p class="mb-4" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">The Challenge:</strong> Property owners struggled with manual tracking of tenants, payments, and maintenance requests—leading to missed payments and inefficient communication.</p>
+         <p class="mb-4" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">My Solution:</strong> Built a comprehensive management system with tenant databases, automated payment tracking, maintenance request workflows, and reporting dashboards.</p>
+         <p class="mb-6" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">Impact:</strong> Streamlined operations, reduced payment delays, and provided property owners with real-time insights into their portfolios.</p>
          <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">Laravel</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">PHP</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">MySQL</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">Blade Templates</span>
          </div>
         </div>
         <div class="flex items-center justify-center">
          <a href="https://orinno.lt" target="_blank" rel="noopener noreferrer" class="w-full h-48 rounded-2xl flex items-center justify-center group transition-all hover:scale-105" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));">
-          <div class="text-center"><span class="text-4xl block mb-2">🏢</span> <span class="text-sm group-hover:underline" style="color: rgba(232, 232, 237, 0.5);">Visit Site →</span>
+          <div class="text-center"><span class="text-4xl block mb-2">🏢</span> <span class="text-sm group-hover:underline" style="color: var(--color-text-muted);">Visit Site →</span>
           </div>
          </a>
         </div>
@@ -299,18 +305,18 @@
       <div class="glass-card rounded-3xl p-8 hover:scale-[1.02] transition-transform glow-effect">
        <div class="grid md:grid-cols-3 gap-8">
         <div class="md:col-span-2">
-         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(34, 211, 238, 0.2); color: var(--color-secondary);">Completed</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Modern Web App</span>
+         <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 rounded-full text-xs" style="background: rgba(34, 211, 238, 0.2); color: var(--color-secondary);">Completed</span> <span class="text-sm" style="color: var(--color-text-muted);">Modern Web App</span>
          </div>
          <h3 class="text-2xl font-bold mb-3" style="font-family: 'Space Grotesk', sans-serif;">Next.js Web Application</h3>
-         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">The Challenge:</strong> Needed to deliver a fast, SEO-friendly, and visually polished web experience with modern development practices.</p>
-         <p class="mb-4" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">My Solution:</strong> Leveraged Next.js for server-side rendering and Tailwind CSS for rapid, responsive styling—creating a performant application with excellent developer experience.</p>
-         <p class="mb-6" style="color: rgba(232, 232, 237, 0.7);"><strong style="color: var(--color-text);">Impact:</strong> Delivered a lightning-fast user experience with improved search engine visibility and maintainable codebase.</p>
+         <p class="mb-4" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">The Challenge:</strong> Needed to deliver a fast, SEO-friendly, and visually polished web experience with modern development practices.</p>
+         <p class="mb-4" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">My Solution:</strong> Leveraged Next.js for server-side rendering and Tailwind CSS for rapid, responsive styling—creating a performant application with excellent developer experience.</p>
+         <p class="mb-6" style="color: var(--color-text-secondary);"><strong style="color: var(--color-text);">Impact:</strong> Delivered a lightning-fast user experience with improved search engine visibility and maintainable codebase.</p>
          <div class="flex flex-wrap gap-2"><span class="skill-tag px-3 py-1 rounded-full text-xs">Next.js</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">React</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">Tailwind CSS</span> <span class="skill-tag px-3 py-1 rounded-full text-xs">TypeScript</span>
          </div>
         </div>
         <div class="flex items-center justify-center">
          <div class="w-full h-48 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(99, 102, 241, 0.2));">
-          <div class="text-center"><span class="text-4xl block mb-2">⚡</span> <span class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Portfolio Project</span>
+          <div class="text-center"><span class="text-4xl block mb-2">⚡</span> <span class="text-sm" style="color: var(--color-text-muted);">Portfolio Project</span>
           </div>
          </div>
         </div>
@@ -331,7 +337,7 @@
         </div>
         <div>
          <h3 class="font-semibold mb-1">Current Focus</h3>
-         <p style="color: rgba(232, 232, 237, 0.7);">Deepening my expertise in Laravel and Next.js while exploring how AI can enhance the applications I build. Building production-ready systems that prioritize security and scalability.</p>
+         <p style="color: var(--color-text-secondary);">Deepening my expertise in Laravel and Next.js while exploring how AI can enhance the applications I build. Building production-ready systems that prioritize security and scalability.</p>
         </div>
        </div>
        <div class="flex gap-4">
@@ -339,7 +345,7 @@
         </div>
         <div>
          <h3 class="font-semibold mb-1">Learning Journey</h3>
-         <p style="color: rgba(232, 232, 237, 0.7);">Diving into AI integration patterns, advanced Laravel architecture, and modern deployment strategies. Every day brings new discoveries in this ever-evolving field.</p>
+         <p style="color: var(--color-text-secondary);">Diving into AI integration patterns, advanced Laravel architecture, and modern deployment strategies. Every day brings new discoveries in this ever-evolving field.</p>
         </div>
        </div>
        <div class="flex gap-4">
@@ -347,7 +353,7 @@
         </div>
         <div>
          <h3 class="font-semibold mb-1">The Vision</h3>
-         <p style="color: rgba(232, 232, 237, 0.7);">Working towards becoming a senior software developer who builds highly scalable, secure systems. I want to create technology that makes a meaningful difference—especially here in Africa.</p>
+         <p style="color: var(--color-text-secondary);">Working towards becoming a senior software developer who builds highly scalable, secure systems. I want to create technology that makes a meaningful difference—especially here in Africa.</p>
         </div>
        </div>
       </div>
@@ -357,7 +363,7 @@
    <section class="py-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
      <h2 class="text-3xl md:text-4xl font-bold mb-6" style="font-family: 'Space Grotesk', sans-serif;">Thoughts &amp; <span class="gradient-text">Interests</span></h2>
-     <p class="text-lg mb-8" style="color: rgba(232, 232, 237, 0.7);">Beyond code, I think deeply about <strong style="color: var(--color-secondary);">AI trends</strong> and their implications for how we work and live. I'm fascinated by <strong style="color: var(--color-secondary);">clean code practices</strong>—the kind of craftsmanship that separates good developers from great ones. And as someone building from Uganda, I'm passionate about <strong style="color: var(--color-secondary);">tech innovation in Africa</strong>—proving that world-class software can come from anywhere.</p>
+     <p class="text-lg mb-8" style="color: var(--color-text-secondary);">Beyond code, I think deeply about <strong style="color: var(--color-secondary);">AI trends</strong> and their implications for how we work and live. I'm fascinated by <strong style="color: var(--color-secondary);">clean code practices</strong>—the kind of craftsmanship that separates good developers from great ones. And as someone building from Uganda, I'm passionate about <strong style="color: var(--color-secondary);">tech innovation in Africa</strong>—proving that world-class software can come from anywhere.</p>
      <div class="flex flex-wrap justify-center gap-4"><span class="skill-tag px-4 py-2 rounded-full text-sm">🤖 AI &amp; Machine Learning</span> <span class="skill-tag px-4 py-2 rounded-full text-sm">✨ Clean Code</span> <span class="skill-tag px-4 py-2 rounded-full text-sm">🌍 African Tech</span> <span class="skill-tag px-4 py-2 rounded-full text-sm">🔐 Security</span> <span class="skill-tag px-4 py-2 rounded-full text-sm">📈 Scalability</span>
      </div>
     </div>
@@ -366,7 +372,7 @@
     <div class="max-w-4xl mx-auto">
      <div class="glass-card rounded-3xl p-8 md:p-12 text-center glow-effect" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(34, 211, 238, 0.05) 100%);">
       <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">Let's Build <span class="gradient-text">Something Together</span></h2>
-      <p class="text-lg mb-8 max-w-xl mx-auto" style="color: rgba(232, 232, 237, 0.7);">Whether you have a project in mind, want to collaborate on something interesting, or just want to say hello—I'd love to hear from you. I'm always open to new opportunities and meaningful conversations.</p><a href="mailto:johnwyc256@gmail.com" id="cta-button" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 glow-effect" style="background: var(--color-primary);">
+      <p class="text-lg mb-8 max-w-xl mx-auto" style="color: var(--color-text-secondary);">Whether you have a project in mind, want to collaborate on something interesting, or just want to say hello—I'd love to hear from you. I'm always open to new opportunities and meaningful conversations.</p><a href="mailto:johnwyc256@gmail.com" id="cta-button" class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg transition-all hover:scale-105 glow-effect" style="background: var(--color-primary);">
        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
        </svg><span id="cta-button-text">Get In Touch</span> </a>
       <div class="flex items-center justify-center gap-6 mt-8"><a href="https://github.com/JOHNBSE" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110" style="background: rgba(255, 255, 255, 0.1);">
@@ -382,8 +388,8 @@
    </section><!-- Footer -->
    <footer class="py-8 px-6 border-t" style="border-color: rgba(99, 102, 241, 0.1);">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-     <p class="text-sm" style="color: rgba(232, 232, 237, 0.5);">© 2024 Mugisha John Wycliffe. Built with passion in Uganda 🇺🇬</p>
-     <p class="text-sm" style="color: rgba(232, 232, 237, 0.5);">Crafted with Next.js, Laravel, and ☕</p>
+     <p class="text-sm" style="color: var(--color-text-muted);">© 2024 Mugisha John Wycliffe. Built with passion in Uganda 🇺🇬</p>
+     <p class="text-sm" style="color: var(--color-text-muted);">Crafted with Next.js, Laravel, and ☕</p>
     </div>
    </footer>
   </div>
