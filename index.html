@@ -92,6 +92,15 @@
     .delay-2 { animation-delay: 0.2s; }
     .delay-3 { animation-delay: 0.3s; }
     .delay-4 { animation-delay: 0.4s; }
+
+    #bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+    }
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -146,7 +155,8 @@
  </script>
  </head>
  <body class="h-full" style="background-color: var(--color-bg); color: var(--color-text); font-family: 'Inter', sans-serif;">
-  <div id="main-wrapper" class="h-full w-full overflow-auto"><!-- Decorative Background Elements -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div id="main-wrapper" class="h-full w-full overflow-auto" style="position: relative; z-index: 1;"><!-- Decorative Background Elements -->
    <div class="fixed inset-0 overflow-hidden pointer-events-none">
     <div class="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl" style="background: var(--color-primary);"></div>
     <div class="absolute bottom-40 right-20 w-96 h-96 rounded-full opacity-10 blur-3xl" style="background: var(--color-secondary);"></div>
@@ -638,5 +648,137 @@
       });
     });
   </script>
+ <script>
+  (function () {
+    var canvas = document.getElementById('bg-canvas');
+    var ctx = canvas.getContext('2d');
+
+    var primaryRGB = '99,102,241';
+    var secondaryRGB = '34,211,238';
+    var isDark = true;
+
+    function parseHex(hex) {
+      var m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex.trim());
+      return m ? parseInt(m[1], 16) + ',' + parseInt(m[2], 16) + ',' + parseInt(m[3], 16) : null;
+    }
+
+    function parseRgb(s) {
+      var m = /rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/.exec(s);
+      return m ? m[1] + ',' + m[2] + ',' + m[3] : null;
+    }
+
+    function toRGB(val) {
+      val = (val || '').trim();
+      return parseHex(val) || parseRgb(val) || '99,102,241';
+    }
+
+    function updateColors() {
+      var s = getComputedStyle(document.documentElement);
+      primaryRGB = toRGB(s.getPropertyValue('--color-primary'));
+      secondaryRGB = toRGB(s.getPropertyValue('--color-secondary'));
+      isDark = !document.documentElement.classList.contains('light');
+    }
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    var mouse = { x: -9999, y: -9999 };
+    window.addEventListener('mousemove', function (e) { mouse.x = e.clientX; mouse.y = e.clientY; });
+    window.addEventListener('mouseleave', function () { mouse.x = -9999; mouse.y = -9999; });
+
+    var NUM = Math.min(90, Math.floor(window.innerWidth * window.innerHeight / 12000));
+    var CONNECT = 130;
+    var MOUSE_R = 115;
+    var particles = [];
+
+    for (var i = 0; i < NUM; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r: Math.random() * 1.6 + 0.5,
+        a: Math.random() * 0.35 + 0.15
+      });
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      var baseA = isDark ? 1 : 0.55;
+      var p, q, dx, dy, d, alpha;
+
+      for (var i = 0; i < particles.length; i++) {
+        p = particles[i];
+
+        for (var j = i + 1; j < particles.length; j++) {
+          q = particles[j];
+          dx = p.x - q.x; dy = p.y - q.y;
+          d = Math.sqrt(dx * dx + dy * dy);
+          if (d < CONNECT) {
+            alpha = (1 - d / CONNECT) * 0.22 * baseA;
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(' + primaryRGB + ',' + alpha + ')';
+            ctx.lineWidth = 0.6;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.stroke();
+          }
+        }
+
+        dx = p.x - mouse.x; dy = p.y - mouse.y;
+        d = Math.sqrt(dx * dx + dy * dy);
+        if (d < MOUSE_R * 1.6) {
+          alpha = (1 - d / (MOUSE_R * 1.6)) * 0.55 * baseA;
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(' + secondaryRGB + ',' + alpha + ')';
+          ctx.lineWidth = 0.9;
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+
+      for (var i = 0; i < particles.length; i++) {
+        p = particles[i];
+
+        dx = p.x - mouse.x; dy = p.y - mouse.y;
+        d = Math.sqrt(dx * dx + dy * dy);
+        if (d > 0 && d < MOUSE_R) {
+          var force = ((MOUSE_R - d) / MOUSE_R) * 0.055;
+          p.vx += (dx / d) * force;
+          p.vy += (dy / d) * force;
+        }
+
+        p.vx *= 0.97; p.vy *= 0.97;
+        var spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+        if (spd > 2.8) { p.vx = p.vx / spd * 2.8; p.vy = p.vy / spd * 2.8; }
+
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x += canvas.width;
+        if (p.x > canvas.width) p.x -= canvas.width;
+        if (p.y < 0) p.y += canvas.height;
+        if (p.y > canvas.height) p.y -= canvas.height;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + primaryRGB + ',' + (p.a * baseA) + ')';
+        ctx.fill();
+      }
+    }
+
+    updateColors();
+    animate();
+
+    var observer = new MutationObserver(updateColors);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'style'] });
+  })();
+ </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d28f1f7f53c8a3f',t:'MTc3MTg3MzAwNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
