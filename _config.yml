@@ -1,0 +1,10 @@
+title: "JohnBSE — Laravel Projects Portfolio"
+baseurl: ""
+url: ""
+markdown: kramdown
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+description: "A portfolio of Laravel projects by JOHN BSE"
