@@ -1,6 +1,6 @@
 title: "JohnBSE — Laravel Projects Portfolio"
-baseurl: ""
-url: ""
+baseurl: "/personal-portfolio"
+url: "https://johnbse.github.io"
 markdown: kramdown
 collections:
   projects:
