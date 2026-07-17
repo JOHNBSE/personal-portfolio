@@ -10,7 +10,7 @@ title: "Laravel projects"
   <li>
     <h2><a href="{{ project.repo_url }}">{{ project.title }}</a></h2>
     <p>{{ project.excerpt }}</p>
-    <p><img src="{{ project.image }}" alt="{{ project.title }} screenshot" style="max-width:360px;border-radius:8px;border:1px solid #e5e7eb"/></p>
+    {% if project.image %}<p><img src="{{ project.image }}" alt="{{ project.title }} screenshot" style="max-width:360px;border-radius:8px;border:1px solid #e5e7eb"/></p>{% endif %}
     <p><a href="{{ project.url }}">Read more</a></p>
   </li>
 {% endfor %}
