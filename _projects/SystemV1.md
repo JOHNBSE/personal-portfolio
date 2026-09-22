@@ -1,7 +1,7 @@
 ---
 title: RentDesk / SystemV1
 repo_url: https://github.com/JOHNBSE/SystemV1
-image: /assets/images/SystemV1-placeholder.svg
+image: /assets/images/systemv1-admin-overview.svg
 excerpt: "RentDesk — a multi-tenant property management system (practice project)."
 ---
 
@@ -10,6 +10,14 @@ RentDesk is a Laravel REST API backing a property-management platform with three
 > **Vibe-coded practice project.** Built almost entirely through AI-assisted prompts rather than hand-written engineering. It's a DevSecOps training ground for practicing security audits (broken authorization, insecure defaults, missing validation, etc.) — not production-ready as-is.
 
 Two front ends talk to the same API: a zero-build vanilla JS SPA served directly by Laravel, and a separate Vite + React app for comparison.
+
+**Owner dashboard:**
+
+![Owner overview](/assets/images/systemv1-owner-overview.svg)
+
+**Tenant dashboard:**
+
+![Tenant overview](/assets/images/systemv1-tenant-overview.svg)
 
 ## Architecture notes
 
